@@ -158,6 +158,10 @@ function acitpo_wp_enqueue_script() {
 	wp_register_style('acitpo-theme', get_stylesheet_uri(), filemtime(get_template_directory() . '/style.css'));
 	wp_register_script('acipto-global', get_template_directory_uri() . '/js/global.js', array('jquery'), filemtime(get_template_directory() . '/js/global.js'));
 
+	if (is_single() && comments_open()) {
+		wp_enqueue_script('comment-reply');
+	}
+
 	if (!is_admin()) {
 		wp_enqueue_style('acitpo-theme');
 		wp_enqueue_script('acipto-global');

@@ -1,10 +1,10 @@
 /* Theme Name: Acitpo
  * Theme URI: https://github.com/rogerhub/acitpo
  * Description: A minimalistic single-column HTML5 WordPress theme built for personal bloggers. It's design was inspired by the microblogging format as a departure from traditional multi-column blog designs.
- * Version: 1.1
+ * Version: 1.2
  * Author: Roger Chen
  * Author URI: http://rogerhub.com
- * Tags: one-column fluid-layout custom-header featured-images post-formats sticky-post translation-ready
+ * Tags: one-column, fluid-layout, custom-header, featured-images, post-formats, sticky-post, translation-ready
  * License: GPLv2 or greater
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * 
@@ -135,7 +135,9 @@ a {
   margin: 0 0 40px 0;
   text-align: center; }
 
-.post, .page {
+.post, .page,
+.post.sticky,
+.sticky.page {
   background: white;
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -154,12 +156,18 @@ a {
   -ms-transition: margin-bottom 0.2s;
   -moz-transition: margin-bottom 0.2s;
   -o-transition: margin-bottom 0.2s; }
-  .post:hover, .page:hover {
+  .post:hover, .page:hover,
+  .post.sticky:hover,
+  .sticky.page:hover {
     margin-bottom: 20px; }
-  .post h1, .page h1 {
+  .post h1, .page h1,
+  .post.sticky h1,
+  .sticky.page h1 {
     font: bold 30px/1.2 "Helvetica Neue", Arial, Helvetica, sans-serif;
     margin: 20px 0; }
-  .post img, .page img {
+  .post img, .page img,
+  .post.sticky img,
+  .sticky.page img {
     height: auto;
     max-width: 100%; }
 
@@ -292,6 +300,7 @@ body.is-scrolling .post:hover, body.is-scrolling .page:hover {
     font-weight: bold; }
   .entry-content iframe, .entry-content embed, .entry-content object {
     max-width: 100%; }
+  .entry-content .gallery-caption,
   .entry-content .wp-caption {
     max-width: 100%; }
 
@@ -414,6 +423,10 @@ body.is-scrolling .post:hover .entry-meta, body.is-scrolling .page:hover .entry-
   .comment-author a {
     color: #333333;
     text-decoration: none; }
+  .comment-author .bypostauthor {
+    color: #bbbbbb;
+    font-size: 0.75em;
+    text-transform: uppercase; }
 
 .comment-time {
   color: #a0a0a0;

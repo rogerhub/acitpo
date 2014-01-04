@@ -11,7 +11,7 @@
 		<title><?php wp_title('&raquo; ', true, 'right'); ?></title>
 		<?php wp_head(); ?>
 	</head>
-	<body>
+	<body <?php body_class(); ?>>
 		<div id="page" class="hfeed site">
 			<header class="site-header" role="banner">
 				<?php if ($header_image = get_header_image()) : ?>
