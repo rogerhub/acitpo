@@ -21,5 +21,8 @@ Acitpo WordPress Theme, Copyright 2013 RogerHub. Acitpo is distributed under the
 You can contact me by opening an issue on GitHub. (rogerhub/acitpo)
 
 ###### Changelog ######
+= 1.3 =
+* Small style fix for small images
+
 = 1.0 =
 * Initial Release
