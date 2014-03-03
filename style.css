@@ -1,7 +1,7 @@
 /* Theme Name: Acitpo
  * Theme URI: https://github.com/rogerhub/acitpo
  * Description: A minimalistic single-column HTML5 WordPress theme built for personal bloggers. It's design was inspired by the microblogging format as a departure from traditional multi-column blog designs.
- * Version: 1.3
+ * Version: 1.4
  * Author: Roger Chen
  * Author URI: http://rogerhub.com
  * Tags: one-column, fluid-layout, custom-header, featured-images, post-formats, sticky-post, translation-ready
@@ -135,9 +135,8 @@ a {
   margin: 0 0 40px 0;
   text-align: center; }
 
-.post, .page,
-.post.sticky,
-.sticky.page {
+article.post,
+article.post.sticky, article.page {
   background: white;
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -156,26 +155,22 @@ a {
   -ms-transition: margin-bottom 0.2s;
   -moz-transition: margin-bottom 0.2s;
   -o-transition: margin-bottom 0.2s; }
-  .post:hover, .page:hover,
-  .post.sticky:hover,
-  .sticky.page:hover {
+  article.post:hover, article.page:hover {
     margin-bottom: 20px; }
-  .post h1, .page h1,
-  .post.sticky h1,
-  .sticky.page h1 {
+  article.post h1,
+  article.post.sticky h1, article.page h1 {
     font: bold 30px/1.2 "Helvetica Neue", Arial, Helvetica, sans-serif;
     margin: 20px 0; }
-  .post img, .page img,
-  .post.sticky img,
-  .sticky.page img {
+  article.post img,
+  article.post.sticky img, article.page img {
     height: auto;
     max-width: 100%;
     min-width: 100%; }
 
-.page:hover {
+article.page:hover {
   margin-bottom: 80px; }
 
-body.is-scrolling .post:hover, body.is-scrolling .page:hover {
+body.is-scrolling article.post:hover, body.is-scrolling article.page:hover {
   margin-bottom: 80px !important; }
 
 .entry-feature img {
@@ -196,11 +191,11 @@ body.is-scrolling .post:hover, body.is-scrolling .page:hover {
 .entry-content {
   line-height: 1.6;
   margin: 20px 0; }
-  .post.format-image .entry-content, .format-image.page .entry-content {
+  article.format-image.post .entry-content, article.format-image.page .entry-content {
     margin: 0; }
-    .post.format-image .entry-content img, .format-image.page .entry-content img {
+    article.format-image.post .entry-content img, article.format-image.page .entry-content img {
       display: block; }
-  .post.format-video .entry-content, .format-video.page .entry-content {
+  article.format-video.post .entry-content, article.format-video.page .entry-content {
     margin: 0; }
   .entry-content blockquote {
     font: 2.125em/1.3 Georgia, Times, serif; }
@@ -222,11 +217,11 @@ body.is-scrolling .post:hover, body.is-scrolling .page:hover {
   .entry-content p, .entry-content ol, .entry-content ul {
     margin: 20px 0;
     padding: 0 20px; }
-    .post.format-image .entry-content p:first-child, .format-image.page .entry-content p:first-child, .post.format-image .entry-content ol:first-child, .format-image.page .entry-content ol:first-child, .post.format-image .entry-content ul:first-child, .format-image.page .entry-content ul:first-child {
+    article.format-image.post .entry-content p:first-child, article.format-image.page .entry-content p:first-child, article.format-image.post .entry-content ol:first-child, article.format-image.page .entry-content ol:first-child, article.format-image.post .entry-content ul:first-child, article.format-image.page .entry-content ul:first-child {
       padding: 0; }
-    .post.format-image .entry-content p.wp-caption-text, .format-image.page .entry-content p.wp-caption-text, .post.format-image .entry-content ol.wp-caption-text, .format-image.page .entry-content ol.wp-caption-text, .post.format-image .entry-content ul.wp-caption-text, .format-image.page .entry-content ul.wp-caption-text {
+    article.format-image.post .entry-content p.wp-caption-text, article.format-image.page .entry-content p.wp-caption-text, article.format-image.post .entry-content ol.wp-caption-text, article.format-image.page .entry-content ol.wp-caption-text, article.format-image.post .entry-content ul.wp-caption-text, article.format-image.page .entry-content ul.wp-caption-text {
       padding: 0 20px; }
-    .post.format-video .entry-content p:first-child, .format-video.page .entry-content p:first-child, .post.format-video .entry-content ol:first-child, .format-video.page .entry-content ol:first-child, .post.format-video .entry-content ul:first-child, .format-video.page .entry-content ul:first-child {
+    article.format-video.post .entry-content p:first-child, article.format-video.page .entry-content p:first-child, article.format-video.post .entry-content ol:first-child, article.format-video.page .entry-content ol:first-child, article.format-video.post .entry-content ul:first-child, article.format-video.page .entry-content ul:first-child {
       padding: 0; }
     .entry-content p ul, .entry-content p ol, .entry-content ol ul, .entry-content ol ol, .entry-content ul ul, .entry-content ul ol {
       margin-top: 0;
@@ -346,9 +341,9 @@ body.is-scrolling .post:hover, body.is-scrolling .page:hover {
   -ms-transition: margin-bottom 0.2s;
   -moz-transition: margin-bottom 0.2s;
   -o-transition: margin-bottom 0.2s; }
-  .post:hover .entry-meta, .page:hover .entry-meta {
+  article.post:hover .entry-meta {
     margin-bottom: 0; }
-  .page:hover .entry-meta {
+  article.page:hover .entry-meta {
     margin-bottom: -60px; }
   .entry-meta a {
     color: #bbbbbb;
@@ -362,7 +357,7 @@ body.is-scrolling .post:hover, body.is-scrolling .page:hover {
     -ms-transition: opacity 0.2s 0.1s;
     -moz-transition: opacity 0.2s 0.1s;
     -o-transition: opacity 0.2s 0.1s; }
-    .post:hover .entry-meta .date-link, .page:hover .entry-meta .date-link, .post:hover .entry-meta .category-links, .page:hover .entry-meta .category-links, .post:hover .entry-meta .author-link, .page:hover .entry-meta .author-link {
+    article.post:hover .entry-meta .date-link, article.page:hover .entry-meta .date-link, article.post:hover .entry-meta .category-links, article.page:hover .entry-meta .category-links, article.post:hover .entry-meta .author-link, article.page:hover .entry-meta .author-link {
       opacity: 1; }
   .entry-meta .date-link {
     clear: left;
@@ -381,7 +376,7 @@ body.is-scrolling .post:hover, body.is-scrolling .page:hover {
   margin: 20px 0;
   padding: 0 20px; }
 
-body.is-scrolling .post:hover .entry-meta, body.is-scrolling .page:hover .entry-meta {
+body.is-scrolling article.post:hover .entry-meta {
   margin-bottom: -60px !important; }
 
 #comments {
@@ -472,11 +467,11 @@ body.is-scrolling .post:hover .entry-meta, body.is-scrolling .page:hover .entry-
 
 .comment-content {
   line-height: 1.6; }
-  .post.format-image .comment-content, .format-image.page .comment-content {
+  article.format-image.post .comment-content, article.format-image.page .comment-content {
     margin: 0; }
-    .post.format-image .comment-content img, .format-image.page .comment-content img {
+    article.format-image.post .comment-content img, article.format-image.page .comment-content img {
       display: block; }
-  .post.format-video .comment-content, .format-video.page .comment-content {
+  article.format-video.post .comment-content, article.format-video.page .comment-content {
     margin: 0; }
   .comment-content blockquote {
     font: 2.125em/1.3 Georgia, Times, serif; }
